@@ -1,13 +1,12 @@
-import './App.css'
-import TestComponent from './components/TestComponent'
+import ResponsiveNavBar from './components/ResposiveNavBar'
 
+import TestComponent from './components/TestComponent'
 
 function App() {
   return (
     <>
-      <div>
-        <TestComponent />
-      </div>
+      <ResponsiveNavBar />
+      <TestComponent />
     </>
   )
 }
