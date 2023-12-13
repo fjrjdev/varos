@@ -58,7 +58,6 @@ function ResponsiveNavBar() {
         const rightGroup = navigation.slice(4);
         return [leftGroup, rightGroup];
     };
-
     const [leftNavigation, rightNavigation] = splitNavigation();
     return (
         <Disclosure as="nav" className="bg-[#131313]">
@@ -113,7 +112,6 @@ function ResponsiveNavBar() {
                             </div>
                             {/* Mobile menu button */}
                             <div className="-mr-2 flex md:hidden">
-
                                 <Disclosure.Button className="bg-[#131313] p-2 inline-flex items-center justify-center text-gray-400 hover:text-white focus:outline-none transition-transform duration-300 ease-in-out transform">
                                     <span className="sr-only">Open main menu</span>
                                     {open ? (
@@ -125,7 +123,6 @@ function ResponsiveNavBar() {
                             </div>
                         </div>
                     </div>
-
                     {/* Mobile menu */}
                     <Transition
                         show={open}
@@ -167,7 +164,6 @@ function ResponsiveNavBar() {
             )}
         </Disclosure>
     );
-
 }
 
 export default ResponsiveNavBar;
