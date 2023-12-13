@@ -1,6 +1,23 @@
-import { Disclosure } from '@headlessui/react';
+import { Disclosure, Transition } from '@headlessui/react';
 import { Bars3Icon, ShoppingCartIcon, UserIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import TailwindButton from '../styles/button';
+import ProductListNavBar from './ProductListNavBar';
 
+
+export interface Subitem {
+    name: string;
+    text?: string;
+    href?: string;
+}
+
+
+interface MobileNavigationItem {
+    name: string;
+    href?: string;
+    component?: React.ReactNode;
+    subitems?: Subitem[]; // Subitem, não MobileNavigationItem
+    text?: string;
+}
 
 function ResponsiveNavBar() {
     const navigation = [
@@ -11,15 +28,24 @@ function ResponsiveNavBar() {
         { name: 'Assinar Agora', href: '#', icon: ShoppingCartIcon },
         { name: 'Entrar', href: '#', icon: UserIcon },
     ];
-    const mobileNavigation = [
-        { name: 'ENTRAR', href: '#' },
-        { name: 'ASSINAR AGORA ', href: '#' },
+    const mobileNavigation: MobileNavigationItem[] = [
+        {
+            name: 'ENTRAR', component: (
+                <TailwindButton buttonStyle='outlined' buttonSize='large' >
+                    <>
+                        <UserIcon className=" text-green-500 h-5 w-5 mr-2" />
+                        ENTRAR
+                    </>
+                </TailwindButton>
+            )
+        },
+        { name: 'ASSINAR AGORA ', component: (<TailwindButton buttonStyle='green' buttonSize='large'>ASSINAR AGORA</TailwindButton>) },
         {
             name: 'Produtos',
             subitems: [
-                { name: 'Carteiras', href: '#' },
-                { name: 'Cursos', href: '#' },
-                { name: 'Consultoria', href: '#' },
+                { name: 'Carteiras', href: '#', text: "Aprenda a encontrar as melhores ações, invista seu dinheiro de maneira inteligente e construa um futuro financeiro sólido." },
+                { name: 'Cursos', href: '#', text: "Aprenda a encontrar as melhores ações, invista seu dinheiro de maneira inteligente e construa um futuro financeiro sólido." },
+                { name: 'Consultoria', href: '#', text: "Aprenda a encontrar as melhores ações, invista seu dinheiro de maneira inteligente e construa um futuro financeiro sólido." },
             ],
         },
         { name: 'Blog', href: '#' },
@@ -38,7 +64,7 @@ function ResponsiveNavBar() {
         <Disclosure as="nav" className="bg-[#131313]">
             {({ open }) => (
                 <>
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-colors duration-300 ease-in-out">
                         <div className="flex items-center justify-between h-16">
                             <div className="flex items-center space-x-6">
                                 {/*Logo*/}
@@ -64,7 +90,7 @@ function ResponsiveNavBar() {
                                         <a
                                             key={item.name}
                                             href={item.href}
-                                            className="text-gray-300 hover:bg-gray-700 hover:text-white px-1 py-2 rounded-md text-sm font-medium flex items-center"
+                                            className="text-gray-300 hover:text-white px-1 py-2 rounded-md text-sm font-medium flex items-center"
                                         >
                                             {item.icon && <item.icon className="h-5 w-5 mr-2" />}
                                             {item.name}
@@ -78,7 +104,7 @@ function ResponsiveNavBar() {
                                     <a
                                         key={item.name}
                                         href={item.href}
-                                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-1 py-2 rounded-md text-sm font-medium flex items-center"
+                                        className="text-gray-300 hover:text-white px-1 py-2 rounded-md text-sm font-medium flex items-center"
                                     >
                                         {item.icon && <item.icon className="h-5 w-5 mr-2  text-green-500" />}
                                         {item.name}
@@ -87,7 +113,8 @@ function ResponsiveNavBar() {
                             </div>
                             {/* Mobile menu button */}
                             <div className="-mr-2 flex md:hidden">
-                                <Disclosure.Button className="bg-[#131313] p-2 inline-flex items-center justify-center text-gray-400 hover:text-white  focus:outline-none  ">
+
+                                <Disclosure.Button className="bg-[#131313] p-2 inline-flex items-center justify-center text-gray-400 hover:text-white focus:outline-none transition-transform duration-300 ease-in-out transform">
                                     <span className="sr-only">Open main menu</span>
                                     {open ? (
                                         <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -100,35 +127,42 @@ function ResponsiveNavBar() {
                     </div>
 
                     {/* Mobile menu */}
-                    <Disclosure.Panel className="md:hidden">
-                        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            {mobileNavigation.map((item) => (
-                                <div key={item.name}>
-                                    <a
-                                        href={item.href}
-                                        className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                                    >
-                                        {item.name}
-                                    </a>
-
-                                    {/* Subitems, if any */}
-                                    {item.subitems && (
-                                        <div className="pl-4">
-                                            {item.subitems.map((subitem) => (
-                                                <a
-                                                    key={subitem.name}
-                                                    href={subitem.href}
-                                                    className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                                                >
-                                                    {subitem.name}
-                                                </a>
-                                            ))}
-                                        </div>
-                                    )}
-                                </div>
-                            ))}
-                        </div>
-                    </Disclosure.Panel>
+                    <Transition
+                        show={open}
+                        enter="transition-opacity duration-300 ease-in-out"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="transition-opacity duration-300 ease-in-out"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
+                    >
+                        <Disclosure.Panel className="md:hidden">
+                            <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3 border-t">
+                                {mobileNavigation.map((item) => (
+                                    <div key={item.name} className='py-2'>
+                                        {item.component ? (
+                                            item.component
+                                        ) : (
+                                            <>
+                                                {item.name !== 'Produtos' && (
+                                                    <a
+                                                        href={item.href}
+                                                        className="text-gray-300 hover:text-white block px-3 py-2  text-base font-medium border-b"
+                                                    >
+                                                        {item.name}
+                                                    </a>
+                                                )}
+                                                {/* Check if the current item is 'Produtos' and render ProductListNavBar */}
+                                                {item.name === 'Produtos' && item.subitems && (
+                                                    <ProductListNavBar name={item.name} subitems={item.subitems} />
+                                                )}
+                                            </>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                        </Disclosure.Panel>
+                    </Transition>
                 </>
             )}
         </Disclosure>
