@@ -14,7 +14,7 @@ const ProductListNavBar: React.FC<ProductListNavBarProps> = ({ name, subitems })
             </div>
             <div className="cursor-pointer">
                 {subitems.map((subitem) => (
-                    <div className="mb-4">
+                    <div key={subitem.name} className="mb-4">
                         <div className="flex justify-between">
                             <h3 className="text-[#FAFAFA] text-base leading-normal" >{subitem.name}</h3>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
