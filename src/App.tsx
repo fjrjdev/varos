@@ -1,13 +1,13 @@
+import HomeContainer from './components/HomeContainer'
 import ResponsiveNavBar from './components/ResposiveNavBar'
 
-import TestComponent from './components/TestComponent'
 
 function App() {
   return (
-    <>
+    <div className="bg-[#131313]">
       <ResponsiveNavBar />
-      <TestComponent />
-    </>
+      <HomeContainer />
+    </div>
   )
 }
 
