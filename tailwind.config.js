@@ -3,7 +3,14 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontSize: {
+        'custom-desktop': '64px',
+        'custom-tablet': '50px',
+        'custom-mobile': '38px',
+      },
+      
+    },
   },
   plugins: [],
 }

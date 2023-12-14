@@ -1,7 +1,7 @@
 import React from "react"
 interface ButtonProps {
   buttonSize?: "big" | "medium" | "large";
-  buttonStyle: "green" | "outlined",
+  buttonStyle: "green" | "outlined" | "greenRounded"
   color?: string,
   children?: React.ReactNode
 }
@@ -9,7 +9,7 @@ interface ButtonProps {
 const TailwindButton: React.FC<ButtonProps> = ({
   buttonSize = "medium",
   buttonStyle,
-  color,
+  color = "",
   children,
 }) => {
   const getButtonSizeClasses = () => {
@@ -28,15 +28,17 @@ const TailwindButton: React.FC<ButtonProps> = ({
   const getButtonStyleClasses = () => {
     switch (buttonStyle) {
       case "green":
-        return "bg-[#19C819] border-[#FAFAFA] text-[#131313] hover:border-gray-400";
+        return "bg-[#19C819] border-[#FAFAFA] text-[#131313] hover:border-gray-400 justify-center";
       case "outlined":
-        return "bg-[#131313] border-[#FAFAFA] text-[#FAFAFA] hover:border-gray-400";
+        return "bg-[#131313] border-[#FAFAFA] text-[#FAFAFA] hover:border-gray-400  justify-center";
+      case "greenRounded":
+        return "bg-[#155b15] text-[#00F700] max-w-[220px] border border-[#155b15] rounded-[48px] justify-around";
       default:
         return "";
     }
   };
 
-  const buttonClasses = `font-inter font-semibold inline-flex items-center justify-center rounded-md border-2 transition duration-300 ${getButtonSizeClasses()} ${getButtonStyleClasses()} ${color}`;
+  const buttonClasses = `font-inter font-semibold inline-flex items-center border-2 transition duration-300 ${getButtonSizeClasses()} ${getButtonStyleClasses()} ${color}`;
 
   return <button className={buttonClasses}>{children}</button>;
 };
