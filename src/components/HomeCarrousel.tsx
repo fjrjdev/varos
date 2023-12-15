@@ -193,27 +193,29 @@ const HomeCarrousel = () => {
                 clipPath: 'polygon(0px 0px, 95% 1px, 96% 99%, 24px 100%, 0px 70px)'
             }
         }
-            className="pl-10 py-4 gap-10 h-[70px] flex items-center overflow-hidden">
+            className="p-4 gap-40 sm:gap-1 md:gap-5 flex items-center overflow-hidden">
             <h3 className='text-[#B0B7BE] whitespace-nowrap'> visto em</h3>
-            <div className='max-w-[200px]'>                <Swiper
-                centeredSlides={false}
-                slidesPerView={2}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }}
-                pagination={{
-                    clickable: true,
-                }}
-                navigation={true}
-                modules={[Autoplay, Pagination]}
-            >
-                {slideItems.map((item, index) => (
-                    <SwiperSlide key={index}>
-                        {item.icon}
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+            <div className='max-w-[180px] md:max-w-[240px] lg:max-w-[360px]'>
+                <Swiper
+                    centeredSlides={true}
+                    slidesPerView={2}
+                    spaceBetween={70}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    navigation={true}
+                    modules={[Autoplay, Pagination]}
+                >
+                    {slideItems.map((item, index) => (
+                        <SwiperSlide key={index}>
+                            {item.icon}
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </div>
     )
