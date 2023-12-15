@@ -4,7 +4,7 @@ import ResponsiveNavBar from './components/ResposiveNavBar'
 
 function App() {
   return (
-    <div className="bg-[#131313]">
+    <div className="bg-[#131313] max-w-full">
       <ResponsiveNavBar />
       <HomeContainer />
     </div>

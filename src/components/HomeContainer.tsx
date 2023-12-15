@@ -4,8 +4,8 @@ import HomeCarrousel from "./HomeCarrousel";
 
 const HomeContainer = () => {
     return (
-        <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 bg-[#131313]">
-            <div className="flex">
+        <div className="max-w-7xl mx-auto  px-4 py-4 sm:px-6 lg:px-8 bg-[#131313]">
+            <div className="flex ">
                 <div className="flex flex-1 flex-col gap-4">
                     <div className="flex flex-col gap-6">
                         <h1 className="text-[#F2F4F8] text-custom-mobile sm:text-custom-tablet lg:text-custom-desktop leading-tight">
@@ -18,7 +18,7 @@ const HomeContainer = () => {
                     </div>
                     <HomeCarrousel />
                 </div>
-                <div className="hidden sm:flex flex-1 items-center justify-center ">
+                <div className="hidden sm:flex flex-1 items-center justify-center">
                     <CardList />
                 </div>
             </div>

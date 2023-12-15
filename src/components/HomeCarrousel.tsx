@@ -1,4 +1,4 @@
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 
@@ -185,11 +185,19 @@ const HomeCarrousel = () => {
         </svg>
     }]
     return (
-        <div className="px-6 py-4  lg:max-w-[530px] h-[70px] flex items-center gap-10  border-2 border-solid border-[#4D5358]  rounded-[24px]">
+        <div style={
+            {
+                border: "1px solid #4D5358",
+                borderRadius: "24px",
+                borderImageSlice: 1,
+                clipPath: 'polygon(0px 0px, 95% 1px, 96% 99%, 24px 100%, 0px 70px)'
+            }
+        }
+            className="pl-10 py-4 gap-10 h-[70px] flex items-center overflow-hidden">
             <h3 className='text-[#B0B7BE] whitespace-nowrap'> visto em</h3>
-            <Swiper spaceBetween={1}
+            <div className='max-w-[200px]'>                <Swiper
                 centeredSlides={false}
-                slidesPerView={3}
+                slidesPerView={2}
                 autoplay={{
                     delay: 2500,
                     disableOnInteraction: false,
@@ -198,7 +206,7 @@ const HomeCarrousel = () => {
                     clickable: true,
                 }}
                 navigation={true}
-                modules={[Autoplay, Pagination, Navigation]}
+                modules={[Autoplay, Pagination]}
             >
                 {slideItems.map((item, index) => (
                     <SwiperSlide key={index}>
@@ -206,6 +214,7 @@ const HomeCarrousel = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
+            </div>
         </div>
     )
 }
