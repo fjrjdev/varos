@@ -193,7 +193,7 @@ const HomeCarrousel = () => {
                 clipPath: 'polygon(0px 0px, 95% 1px, 96% 99%, 24px 100%, 0px 70px)'
             }
         }
-            className="p-4 gap-40 sm:gap-1 md:gap-5 flex items-center overflow-hidden">
+            className="p-4 gap-10 sm:gap-1 md:gap-5 flex items-center overflow-hidden">
             <h3 className='text-[#B0B7BE] whitespace-nowrap'> visto em</h3>
             <div className='max-w-[180px] md:max-w-[240px] lg:max-w-[360px]'>
                 <Swiper
