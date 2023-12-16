@@ -1,4 +1,3 @@
-import React from "react"
 interface ButtonProps {
   buttonSize?: "big" | "medium" | "large";
   buttonStyle: "green" | "outlined" | "greenRounded"
@@ -6,12 +5,12 @@ interface ButtonProps {
   children?: React.ReactNode
 }
 
-const TailwindButton: React.FC<ButtonProps> = ({
+const TailwindButton = ({
   buttonSize = "medium",
   buttonStyle,
   color = "",
   children,
-}) => {
+}: ButtonProps) => {
   const getButtonSizeClasses = () => {
     switch (buttonSize) {
       case "big":
