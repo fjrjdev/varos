@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { SelectContext } from "../contexts/SelectContext/SelectContext";
+import Typography from "../styles/Typography";
 
 const SelectGraph = () => {
     const { selectedOption } = useContext(SelectContext);
@@ -10,10 +11,10 @@ const SelectGraph = () => {
                 <span className="text-[14px] text-[#F2F4F8]">{selectedOption?.name}</span>
             </div>
             <div className="flex flex-col gap-4">
-                <h3 className="text-[24px] text-[#F2F4F8]">
+                <Typography tag="h2" className="text-[24px] text-[#F2F4F8]">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                </h3>
-                <p className="text-[16px] text-[#D3D6DF]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim </p>
+                </Typography>
+                <Typography tag="p" className="text-[16px] text-[#D3D6DF]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim </Typography>
             </div>
             <div className="">
                 <svg className="w-full h-full" width="621" height="276" viewBox="0 0 621 276" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
