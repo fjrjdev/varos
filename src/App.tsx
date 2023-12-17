@@ -1,5 +1,7 @@
+import ContactContainer from './components/ContactContainer'
 import ContentsContainer from './components/ContentsContainer'
 import EducationalContainer from './components/EducationalContainer'
+import Footer from './components/Footer'
 import HomeContainer from './components/HomeContainer'
 import ResponsiveNavBar from './components/ResposiveNavBar'
 
@@ -11,6 +13,8 @@ function App() {
       <HomeContainer />
       <ContentsContainer />
       <EducationalContainer />
+      <ContactContainer />
+      <Footer />
     </div>
   )
 }
