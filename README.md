@@ -12,7 +12,7 @@ Fornece componentes acessíveis e sem estilo para serem utilizados como blocos d
 ```
 - Heroicons: ^2.0.18
 ```
-Fornece componentes acessíveis e sem estilo para serem utilizados como blocos de construção para interfaces de usuário.
+Conjunto de ícones prontos para uso
 ```
 - Autoprefixer: ^10.4.16
 ```
