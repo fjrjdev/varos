@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 interface ICard {
     name: string;
@@ -6,14 +7,24 @@ interface ICard {
 const Card = ({ name, icon }: ICard) => {
     const hasDot = name.includes('.');
     const [prefix, suffix] = hasDot ? name.split('.') : [name, ''];
+    const delayBase = name.length * 0.1;
     return (
-        <div className="inline-flex px-8 py-2 md:px-4 items-center gap-4 border border-[#4D5358] rounded-lg bg-[#131313] shadow-md-right">
-            <div className="border px-4 py-3 rounded-lg border-[#4D5358]">{icon}</div>
-            <span className="text-white z-10">
-                {hasDot ? <strong>{prefix}</strong> : prefix}
-                {hasDot && <span className="text-[#00f0c9]">.{suffix}</span>}
-            </span>
-        </div>
+        <motion.div
+            initial={{ opacity: 0, x: -delayBase }}
+            animate={{
+                opacity: 1,
+                x: 0,
+                transition: { duration: delayBase, repeat: Infinity, repeatType: "reverse", delay: delayBase * 0.2 }
+            }}
+        >
+            <div className="inline-flex px-8 py-2 md:px-4 items-center gap-4 border border-[#4D5358] rounded-lg bg-[#131313] shadow-md-right">
+                <div className="border px-4 py-3 rounded-lg border-[#4D5358]">{icon}</div>
+                <span className="text-white z-10">
+                    {hasDot ? <strong>{prefix}</strong> : prefix}
+                    {hasDot && <span className="text-[#00f0c9]">.{suffix}</span>}
+                </span>
+            </div>
+        </motion.div>
     );
 }
 const CardList = () => {
@@ -65,6 +76,7 @@ const CardList = () => {
     ];
 
     return (
+
         <div className="flex flex-col gap-14 max-w-[300px]">
             {cardsData.map((card, index) => (
                 <div key={card.name} className={`${index === 1 ? 'ml-4' : ''}`}>
