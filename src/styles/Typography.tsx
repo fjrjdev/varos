@@ -1,7 +1,7 @@
 export interface iBaseTypographyProps {
     className?: string;
     children?: React.ReactNode;
-    tag: 'h2' | 'p';
+    tag: 'h1' | 'h2' | 'h3' | 'p';
     fontWeight?: number;
     fontColor?: string;
     responsiveFontSize?: string;
@@ -32,7 +32,7 @@ const Typography = ({ className, children, tag, fontWeight, fontColor, responsiv
     const dynamicClasses = `${textClass}  ${fontWeight ? `font-${fontWeight}` : ''} ${fontColor ? `text-${fontColor}` : ''} ${responsiveFontSize || ''}`;
     const Tag = tag;
     return (
-        <Tag className={`${className} ${dynamicClasses}`}>
+        <Tag className={`${className} ${dynamicClasses} font-redhat-display`}>
             {children}
         </Tag>
     );
