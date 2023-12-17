@@ -1,11 +1,11 @@
 import Typography from "../styles/Typography";
 
 const Footer = () => {
-    return (<footer className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 bg-[#131313] flex flex-col sm:flex-row sm:justify-evenly min-h-[500px]">
+    return (<footer className="max-w-7xl w-full mx-auto px-4 py-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:gap-20 min-h-[500px]">
 
         <div className="flex flex-col justify-start gap-4 sm:justify-between">
             <div className="flex flex-col gap-4">
-                <img width="74px" height="74px" src="src\assets\logo.svg" />
+                <img width="74px" height="74px" src="/logo.svg" />
                 <svg xmlns="http://www.w3.org/2000/svg" width="74" height="14" viewBox="0 0 74 14" fill="none">
                     <g clipPath="url(#clip0_373_331)">
                         <path d="M6.12239 13.2652L0 0.934937H3.43112L7.59216 9.96646L11.9965 0.934937H15.0949L8.96759 13.2652H6.12736H6.12239Z" fill="#E2E5EB" />
@@ -28,14 +28,14 @@ const Footer = () => {
         </div>
         <div className="flex flex-wrap sm:flex-nowrap sm:flex-row py-4 sm:py-0">
             <div className="w-1/2 sm:w-full flex flex-col gap-4 py-4">
-                <Typography tag="h2" >Cursos</Typography>
+                <Typography tag="h2" responsiveFontSize="text-[20px]" >Cursos</Typography>
                 <Typography tag="p" >Valuation do Zero ao Avançado 2.0</Typography>
                 <Typography tag="p" >Código.py</Typography>
                 <Typography tag="p" >Minicurso Reels</Typography>
                 <Typography tag="p" >Enciclopédia de FII</Typography>
             </div>
             <div className="w-1/2 sm:w-full flex flex-col gap-4 py-4">
-                <Typography tag="h2" >Carteiras</Typography>
+                <Typography tag="h2" responsiveFontSize="text-[20px]" >Carteiras</Typography>
                 <Typography tag="p" >Carteira FATOR</Typography>
                 <Typography tag="p" >Carteira Seleção</Typography>
                 <Typography tag="p" >Carteira Small Caps</Typography>
@@ -43,11 +43,11 @@ const Footer = () => {
                 <Typography tag="p" >Carteira de FIIs</Typography>
             </div>
             <div className="w-1/2 sm:w-full flex flex-col gap-4 py-4">
-                <Typography tag="h2" >Sobre</Typography>
+                <Typography tag="h2" responsiveFontSize="text-[20px]" >Sobre</Typography>
                 <Typography tag="p" >Quem somos</Typography>
             </div>
             <div className="w-1/2 sm:w-full flex flex-col gap-4 py-4">
-                <Typography tag="h2" >Redes Sociais</Typography>
+                <Typography tag="h2" responsiveFontSize="text-[20px]" >Redes Sociais</Typography>
                 <Typography tag="p" >Instagram</Typography>
                 <Typography tag="p" >Twitter</Typography>
                 <Typography tag="p" >Youtube</Typography>

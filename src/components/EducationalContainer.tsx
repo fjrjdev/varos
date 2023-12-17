@@ -3,7 +3,7 @@ import EducationalCarrousel from "./EducationalCarrousel";
 
 const EducationalContainer = () => {
     return (
-        <section className="max-w-7xl mx-auto  px-4 py-4 sm:px-6 lg:px-8 bg-[#131313] block sm:flex  sm:justify-between">
+        <section className="max-w-7xl w-full mx-auto px-4 py-4 sm:px-6 lg:px-8 bg-[#131313] block sm:flex  sm:justify-between">
             <div className="flex flex-col gap-20 items-center sm:items-start">
                 <div className="flex flex-col gap-2 text-center sm:text-start">
                     <Typography tag="h2" textColor="light" responsiveFontSize="text-[30px] sm:text-[38px]">
@@ -14,7 +14,7 @@ const EducationalContainer = () => {
                 <EducationalCarrousel />
             </div>
             <div className="flex flex-col gap-10">
-                <img src="src\assets\Image-2.svg" />
+                <img src="/Image-2.svg" />
                 <div style={
                     {
                         border: "1px solid #4D5358",

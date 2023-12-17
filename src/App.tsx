@@ -8,7 +8,7 @@ import ResponsiveNavBar from './components/ResposiveNavBar'
 
 function App() {
   return (
-    <div className="bg-[#131313] max-w-full">
+    <div className="bg-[#131313] max-w-full flex flex-col gap-10">
       <ResponsiveNavBar />
       <HomeContainer />
       <ContentsContainer />
