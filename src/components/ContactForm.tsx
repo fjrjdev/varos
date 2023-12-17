@@ -35,10 +35,10 @@ const ContactForm = () => {
     return (
         <>
             <form onSubmit={handleSubmit} className="flex flex-col bg-[#131516] rounded-[32px] border border-[#4D5358] p-10 gap-6">
-                <input className="bg-[#222729] p-4 border border-[#4D5358] rounded-sm text-white" placeholder="Nome" type="text" name="nome" value={formData.nome} onChange={handleChange} />
-                <input className="bg-[#222729] p-4 border border-[#4D5358] rounded-sm text-white" placeholder="Seu melhor email" type="email" name="email" value={formData.email} onChange={handleChange} />
-                <input className="bg-[#222729] p-4 border border-[#4D5358] rounded-sm text-white" placeholder="Celular" name="phone" type="tel" value={formData.phone} onChange={handleChange} />
-                <TailwindButton buttonStyle='green' buttonSize='large'>QUERO ME INSCREVER</TailwindButton>
+                <input autoComplete="given-name" className="bg-[#222729] p-4 border border-[#4D5358] rounded-sm text-white" placeholder="Nome" type="text" name="nome" value={formData.nome} onChange={handleChange} />
+                <input autoComplete="email" className="bg-[#222729] p-4 border border-[#4D5358] rounded-sm text-white" placeholder="Seu melhor email" type="email" name="email" value={formData.email} onChange={handleChange} />
+                <input autoComplete="tel" className="bg-[#222729] p-4 border border-[#4D5358] rounded-sm text-white" placeholder="Celular" name="phone" type="text" value={formData.phone} onChange={handleChange} />
+                <TailwindButton type="submit" buttonStyle='green' buttonSize='large'>QUERO ME INSCREVER</TailwindButton>
             </form>
         </>
     );

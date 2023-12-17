@@ -1,8 +1,9 @@
 interface ButtonProps {
-  buttonSize?: "big" | "medium" | "large";
-  buttonStyle: "green" | "outlined" | "greenRounded"
+  buttonSize?: "big" | "medium" | "large",
+  buttonStyle: "green" | "outlined" | "greenRounded",
   color?: string,
-  children?: React.ReactNode
+  children?: React.ReactNode,
+  type?: "button" | "submit" | "reset" | undefined;
 }
 
 const TailwindButton = ({
@@ -10,6 +11,7 @@ const TailwindButton = ({
   buttonStyle,
   color = "",
   children,
+  type = "button"
 }: ButtonProps) => {
   const getButtonSizeClasses = () => {
     switch (buttonSize) {
@@ -39,7 +41,7 @@ const TailwindButton = ({
 
   const buttonClasses = `font-inter font-semibold inline-flex items-center border-2 transition duration-300 ${getButtonSizeClasses()} ${getButtonStyleClasses()} ${color}`;
 
-  return <button className={buttonClasses}>{children}</button>;
+  return <button type={type} className={buttonClasses}>{children}</button>;
 };
 
 export default TailwindButton;
