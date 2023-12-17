@@ -3,7 +3,7 @@ import ContentsContainer from './components/ContentsContainer'
 import EducationalContainer from './components/EducationalContainer'
 import Footer from './components/Footer'
 import HomeContainer from './components/HomeContainer'
-import ResponsiveNavBar from './components/ResposiveNavBar'
+import ResponsiveNavBar from './components/ResponsiveNavBar'
 
 
 function App() {

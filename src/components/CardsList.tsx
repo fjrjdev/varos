@@ -4,10 +4,15 @@ interface ICard {
     icon: React.ReactNode
 }
 const Card = ({ name, icon }: ICard) => {
+    const hasDot = name.includes('.');
+    const [prefix, suffix] = hasDot ? name.split('.') : [name, ''];
     return (
         <div className="inline-flex px-8 py-2 md:px-4 items-center gap-4 border border-[#4D5358] rounded-lg bg-[#131313] shadow-md-right">
             <div className="border px-4 py-3 rounded-lg border-[#4D5358]">{icon}</div>
-            <span className="text-white z-10">{name}</span>
+            <span className="text-white z-10">
+                {hasDot ? <strong>{prefix}</strong> : prefix}
+                {hasDot && <span className="text-[#00f0c9]">.{suffix}</span>}
+            </span>
         </div>
     );
 }

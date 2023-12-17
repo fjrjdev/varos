@@ -5,7 +5,7 @@ const Footer = () => {
 
         <div className="flex flex-col justify-start gap-4 sm:justify-between">
             <div className="flex flex-col gap-4">
-                <img width="74px" height="74px" src="/logo.svg" />
+                <img width="74px" height="74px" src="/logo.svg" alt="logo varos" />
                 <svg xmlns="http://www.w3.org/2000/svg" width="74" height="14" viewBox="0 0 74 14" fill="none">
                     <g clipPath="url(#clip0_373_331)">
                         <path d="M6.12239 13.2652L0 0.934937H3.43112L7.59216 9.96646L11.9965 0.934937H15.0949L8.96759 13.2652H6.12736H6.12239Z" fill="#E2E5EB" />

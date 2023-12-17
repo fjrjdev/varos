@@ -14,7 +14,7 @@ const EducationalContainer = () => {
                 <EducationalCarrousel />
             </div>
             <div className="flex flex-col gap-10">
-                <img src="/Image-2.svg" />
+                <img src="/Image-2.svg" alt="Imagem Varos" width={550} height={550} />
                 <div style={
                     {
                         border: "1px solid #4D5358",
