@@ -5,7 +5,7 @@ export interface iBaseTypographyProps {
     fontWeight?: number;
     fontColor?: string;
     responsiveFontSize?: string;
-    textColor?: 'light' | 'dark';
+    textColor?: 'light' | 'dark' | 'green' | 'grey' | 'greyDarker';
 }
 
 const Typography = ({ className, children, tag, fontWeight, fontColor, responsiveFontSize, textColor }: iBaseTypographyProps) => {
@@ -17,8 +17,17 @@ const Typography = ({ className, children, tag, fontWeight, fontColor, responsiv
         case 'dark':
             textClass = 'text-[#B0B7BE]';
             break;
+        case 'green':
+            textClass = 'text-[#19C819]';
+            break;
+        case 'grey':
+            textClass = 'text-[#FAFAFA]';
+            break;
+        case 'greyDarker':
+            textClass = 'text-[#C6CAD2]';
+            break;
         default:
-            textClass = '';
+            textClass = 'text-[#F2F4F8]';
     }
     const dynamicClasses = `${textClass}  ${fontWeight ? `font-${fontWeight}` : ''} ${fontColor ? `text-${fontColor}` : ''} ${responsiveFontSize || ''}`;
     const Tag = tag;
