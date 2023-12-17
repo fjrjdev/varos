@@ -26,7 +26,7 @@ const Footer = () => {
                 <Typography tag="p" textColor="light" responsiveFontSize="text-[14px]">Todos os direitos reservados</Typography>
             </div>
         </div>
-        <div className="flex flex-wrap sm:flex-nowrap sm:flex-row py-4 sm:py-0">
+        <div className="flex flex-wrap sm:flex-nowrap sm:flex-row py-4 sm:py-0 gap-0 sm:gap-4">
             <div className="w-1/2 sm:w-full flex flex-col gap-4 py-4">
                 <Typography tag="h2" responsiveFontSize="text-[20px]" >Cursos</Typography>
                 <Typography tag="p" >Valuation do Zero ao Avançado 2.0</Typography>
